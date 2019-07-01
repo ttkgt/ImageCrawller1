@@ -3,8 +3,6 @@ import re
 
 import urllib
 import requests
-
-
 class ImageCrawller:
     def __init__(self, save_dirpath, start_page, maximum_download):
         self.save_dirpath = save_dirpath
@@ -35,6 +33,7 @@ class ImageCrawller:
 
         print('Finished')
 
+
     def get_abs_urls(self, url):
         try:
             # URLから文字列のHTMLを取得
@@ -56,6 +55,7 @@ class ImageCrawller:
         except Exception as e:
             print('Error: {}'.format(e))
             return []
+
 
     def get_image_url_list(self, url_list):
         try:
