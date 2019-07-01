@@ -7,7 +7,7 @@ import requests
 
 class ImageCrawller:
     def __init__(self, save_dirpath, start_page, maximum_download):
-        self.save_dirpath = save_dirparh
+        self.save_dirpath = save_dirpath
         self.crawl_url_list = [start_page]
         self.stocked_url = set()
         self.maximum_dowmload = maximum_download
@@ -22,7 +22,7 @@ class ImageCrawller:
                 break
 
             # 処理２：次に調べるHTMLのURLを取得
-            craw_url = self.crawl_url_list.pop(0)
+            crawl_url = self.crawl_url_list.pop(0)
 
             # 処理３：HTMLページから絶対URLを抽出する
             urls = self.get_abs_urls(crawl_url)
@@ -112,5 +112,4 @@ class ImageCrawller:
         maximum_download = 10
         crawller = ImageCrawller(save_dirpath, start_page, maximum_download)
         crawller.run()
-
 
